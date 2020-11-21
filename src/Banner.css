@@ -1,0 +1,14 @@
+p{
+    font-family: normal normal normal 28px/38px Open Sans;
+}
+.startedButton{
+    
+        background-color: #7ECB20;
+    font-size: 1.5rem;
+    border-radius: 27px;
+        border:none;
+        color:white;
+    width:15rem;
+    height: 3rem;  
+    
+}

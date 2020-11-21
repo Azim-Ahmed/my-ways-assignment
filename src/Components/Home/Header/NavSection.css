@@ -1,0 +1,96 @@
+.btnItem{
+    background-color: #7ECB20;
+font-size: 1rem;
+border-radius: 15px;
+    border:none;
+width:7rem;
+height: 2rem;  
+}
+.nav-item{
+    list-style: none;
+    color:#000000;
+    
+}
+@media (max-width: 320px) {
+    .nav-item{
+        margin-right: 0px;
+        margin-left: 0px;
+        text-decoration: none;
+        border-bottom: none;
+        
+    }    
+}
+.navSignUP{
+    font-size: 1.2rem;  
+    color: #7ECB20;
+}
+a:hover{
+    /* Hover section of every nav item */
+
+    text-decoration: none !important;
+    }
+
+    .navStand{
+        border-bottom: 3px solid #0000000F;
+        box-shadow: 5px 0px 20px #0000000F;
+    }
+    .btn-group button{
+        background: #ffff;
+        color: black;
+        border: none;
+        font-size: 1.2rem;
+    }
+    .btn-group button:hover{
+        background: #ffff;
+        color: black;
+        border: none;
+    }
+
+
+    .openForm{
+        display:block;
+        right: 0;
+    position: absolute;
+    top: 1px;
+    background-color: white;
+    height:100vh;
+    width: 25rem;
+    }
+    .nonOpenForm{
+        display: none;
+    }
+    .CrossButton{
+        border: 1px solid black;
+        border-radius: 50%;
+        align-items: center;
+    }
+    .loginHeader{
+        color:#7ECB20;
+        border-bottom: 1px solid #7ECB20;
+    }
+    .SignButton{
+        background-color: #7ECB20;
+        border:none;
+        color: aliceblue;
+        border-radius:8px;
+        height:2.5rem;
+    }
+    .openSignUpForm{
+        display:block;
+        width:40rem;
+        top:0;
+        bottom:0;
+        right: 25%;
+    position: absolute;
+    background-color: white;
+    }
+    .successBanner{
+        position: absolute;
+        right:30%;
+        left: 25%;
+        top: 20%;
+      
+        background: #0000000F;
+    }
+    
+    
