@@ -10,7 +10,7 @@ const Success = () => {
             <h1>Thanks, successful.</h1>
             
         </div>
-        <p>Back to ,<Link to="/">Home</Link></p>
+        <p>Turn your ,<Link to="/internship">InternShip</Link></p>
         </div>
     );
 };

@@ -29,9 +29,6 @@ function App() {
       <Route path ="/home">
         <Home></Home>
         </Route>
-        {/* <Route path ="/login">
-        <Login/>
-        </Route> */}
         <PrivateRoute path ="/success">
        <Success></Success>
         </PrivateRoute>

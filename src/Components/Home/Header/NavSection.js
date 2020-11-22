@@ -11,16 +11,18 @@ import Login from "../../auth/Login";
 
 
 const NavSection = () => {
+    // dropdown toggle state
     const [dropdownOpen, setOpen] = useState(false);
     const toggle = () => setOpen(!dropdownOpen);
 
+    //MenuBar Collapse Toggle bar
     const [collapsed, setCollapsed] = useState(true);
     const toggleNavbar = () => setCollapsed(!collapsed);
 
+    //login toggle bar
     const [isOpen, setIsOpen] = useState(false);
 
-    const [isSignUpOpen, setIsSignUpOpen] = useState(false);
-
+    //context data passing
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     return (
@@ -40,15 +42,12 @@ const NavSection = () => {
                         <NavItem>
                             <NavLink className="mr-4 text-dark navfont" to="/">
                                 <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-                                    <DropdownToggle caret>
-                                        For You
-      </DropdownToggle>
+                                    <DropdownToggle caret>For You</DropdownToggle>
                                     <DropdownMenu>
-
-                                        <DropdownItem >Action</DropdownItem>
-                                        <DropdownItem>Another Action</DropdownItem>
+                                        <DropdownItem >Get Response</DropdownItem>
+                                        <DropdownItem>Another ways</DropdownItem>
                                         <DropdownItem divider />
-                                        <DropdownItem>Another Action</DropdownItem>
+                                        <DropdownItem>MyWays Official info</DropdownItem>
                                     </DropdownMenu>
                                 </ButtonDropdown>
                             </NavLink>
@@ -56,14 +55,13 @@ const NavSection = () => {
                         <NavItem>
                             <NavLink className="mr-3 text-dark navfont" to="/about">
                                 <img src={instant} alt="" />Instant Apply
-              </NavLink>
+                  </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="mr-3 text-dark navfont" to="/service">
                                 Pricing
               </NavLink>
                         </NavItem>
-
                         <NavItem>
                             <NavLink
                                 className=" mr-3 text-dark navfont navfont"
@@ -77,24 +75,15 @@ const NavSection = () => {
                 <NavItem>
 
                     {
-                        loggedInUser.email ? <h6>Welcome,</h6> : <><NavLink onClick={() => setIsSignUpOpen(!isSignUpOpen)}
+                        loggedInUser.email ? <h6 className="bg-success p-1">Welcome,</h6> : <><NavLink
                             className=" mr-3 navSignUP"
                             to="/#">SIGN UP</NavLink>
-                            <div className={isSignUpOpen ? "openSignUpForm" : "nonOpenForm"}>
-                                <div className="pt-5 d-flex justify-content-around">
-                                    <h6 className="p-1">Login</h6>
-                                    <h4 className="text-center CrossButton p-1" onClick={() => setIsSignUpOpen(!isSignUpOpen)}> X </h4>
-                                </div>
-                                <Login signUp="signUp"></Login>
-                            </div>
                         </>
                     }
-
-
                 </NavItem>
                 <NavItem>
                     {
-                        loggedInUser.email ? <h6>{loggedInUser.name}</h6> : <>  <button onClick={() => setIsOpen(!isOpen)} color="info" className="text-center   btnItem">
+                        loggedInUser.email ? <h6 className="bg-warning p-1">{loggedInUser.name}</h6> : <>  <button onClick={() => setIsOpen(!isOpen)} color="info" className="text-center   btnItem">
                             <NavLink className="mx-3  text-white" to="/#">LOGIN </NavLink>
                         </button>
                             <div className={isOpen ? "openForm" : "nonOpenForm"}>

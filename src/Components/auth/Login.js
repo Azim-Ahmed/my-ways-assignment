@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {  Card, Container, Form,CardBody } from "reactstrap";
+import {  Card, Form,CardBody } from "reactstrap";
 import { Redirect, useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../App";
 import handleError from "../Input/ErrorHandler";
@@ -16,8 +16,8 @@ const initUser = {
   errors: {},
 };
 
-const Login = (props) => {
-const {signUp} = props;
+const Login = () => {
+
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [user, setUser] = useState(null);
@@ -101,7 +101,7 @@ const {signUp} = props;
                 {newUser ? "Create an account" : "Student"}
               </h2>
               <Form autoComplete="off" onSubmit={submitHandler}>
-                {(newUser && signUp) && (
+                {newUser && (
                   <InputItem
                     value={firstName}
                     onChangeHandler={onChangeHandler}
@@ -112,7 +112,7 @@ const {signUp} = props;
                     placeholder="First Name"
                   />
                 )}
-                {(newUser && signUp) && (
+                {newUser && (
                   <InputItem
                     value={lastName}
                     onChangeHandler={onChangeHandler}
@@ -140,7 +140,7 @@ const {signUp} = props;
                   customClass="loginInput"
                   placeholder="Password"
                 />
-                {(newUser && signUp) && (
+                {newUser && (
                   <InputItem
                     value={confirmPassword}
                     onChangeHandler={onChangeHandler}
@@ -157,18 +157,18 @@ const {signUp} = props;
                   </p>
                 )}
                 <button className="w-100 SignButton" type="submit">
-                  {(newUser && signUp) ? "Sign Up" : "Login"}
+                  {newUser ? "Sign Up" : "Login"}
                 </button>
              
               </Form>
               <p className="text-center pt-2">
-                {(newUser && signUp) ? "Already have an account" : "New to  MyWays"}{" "}
+                {newUser  ? "Already have an account" : "New to  MyWays"}{" "}
                 ?
                 <span
                   onClick={() => setNewUser(!newUser)}
                   className="text-warning login"
                 >
-                  {(newUser && signUp) ? " Login" : "Sign Up here"}
+                  {newUser  ? " Login" : "Sign Up here"}
                 </span>
               </p>
             </CardBody>
