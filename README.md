@@ -1,5 +1,5 @@
 # This is A web application Sign In/Up form for who wants to get intern
-## live link : [My-Ways](https://athena-design-temp.netlify.app/)
+## live link : [My-Ways](https://myways-web.netlify.app/)
 
 
 
