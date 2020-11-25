@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import {  Card, Form,CardBody } from "reactstrap";
-import { Redirect, useHistory, useLocation } from "react-router-dom";
+import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../App";
 import handleError from "../Input/ErrorHandler";
 import InputItem from "../Input/InputItem";
@@ -16,7 +16,8 @@ const initUser = {
   errors: {},
 };
 
-const Login = () => {
+const Login = (props) => {
+  const {signUp} = props;
 
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -25,7 +26,7 @@ const Login = () => {
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/success" } };
   const [loading, setLoading] = useState(false);
-  const [newUser, setNewUser] = useState(false);
+  const [newUser, setNewUser] = useState(signUp ? true : false);
   const [userInfo, setUserInfo] = useState({ ...initUser });
 
   const onChangeHandler = (e) => {
@@ -164,12 +165,12 @@ const Login = () => {
               <p className="text-center pt-2">
                 {newUser  ? "Already have an account" : "New to  MyWays"}{" "}
                 ?
-                <span
+                <Link
                   onClick={() => setNewUser(!newUser)}
                   className="text-warning login"
                 >
                   {newUser  ? " Login" : "Sign Up here"}
-                </span>
+                </Link>
               </p>
             </CardBody>
           </Card>

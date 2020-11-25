@@ -22,6 +22,9 @@ const NavSection = () => {
     //login toggle bar
     const [isOpen, setIsOpen] = useState(false);
 
+
+    const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+
     //context data passing
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
@@ -75,9 +78,19 @@ const NavSection = () => {
                 <NavItem>
 
                     {
-                        loggedInUser.email ? <h6 className="bg-success p-1">Welcome,</h6> : <><NavLink
-                            className=" mr-3 navSignUP"
+                        loggedInUser.email ? <h6 className="bg-success p-1">Welcome,</h6> : <>
+                        
+                        <NavLink
+                            className=" mr-3 navSignUP" onClick={() => setIsSignUpOpen(!isSignUpOpen)}
                             to="/#">SIGN UP</NavLink>
+                            <div className={isSignUpOpen ? "openForm text-center" : "nonOpenForm"}>
+                               
+                                  
+                                    <button className=" CrossButton p-2" onClick={() => setIsSignUpOpen(!isSignUpOpen)}> X </button>
+                               
+                                <Login signUp = "signUp"></Login>
+                            </div>
+
                         </>
                     }
                 </NavItem>

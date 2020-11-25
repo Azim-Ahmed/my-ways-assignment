@@ -62,7 +62,9 @@ a:hover{
     .CrossButton{
         border: 1px solid black;
         border-radius: 50%;
-        align-items: center;
+        color: white;
+        background-color: #7ECB20;
+       
     }
     .loginHeader{
         color:#7ECB20;
@@ -91,6 +93,16 @@ a:hover{
         top: 20%;
       
         background: #0000000F;
+    }
+
+    .openBannerForm{
+        display:block;
+        right: 0;
+    position: absolute;
+    top: 1px;
+    background-color: white;
+    height:100vh;
+    width: 25rem;
     }
     
     
