@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../../Banner';
-import Success from '../Success/Success';
+// import VideoConference from '../Extra/Extra';
 import NavSection from './Header/NavSection';
 
 const Home = () => {
@@ -8,7 +8,8 @@ const Home = () => {
         <div>
             <NavSection></NavSection>
             <Banner></Banner>
-            {/* <Success></Success> */}
+            {/* <VideoConference></VideoConference> */}
+         
         </div>
     );
 };

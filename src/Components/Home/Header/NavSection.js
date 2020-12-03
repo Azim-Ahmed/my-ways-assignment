@@ -96,10 +96,10 @@ const NavSection = () => {
                 </NavItem>
                 <NavItem>
                     {
-                        loggedInUser.email ? <h6 className="bg-warning p-1">{loggedInUser.name}</h6> : <>  <button onClick={() => setIsOpen(!isOpen)} color="info" className="text-center   btnItem">
+                        loggedInUser.email ? <h6 className="bg-warning p-1">{loggedInUser.name}</h6> : <>  <button type="button"  data-toggle="modal" data-target="#exampleModal" onClick={() => setIsOpen(!isOpen)} color="info" className="text-center   btnItem">
                             <NavLink className="mx-3  text-white" to="/#">LOGIN </NavLink>
                         </button>
-                            <div className={isOpen ? "openForm" : "nonOpenForm"}>
+                            <div id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" className={isOpen ? "openForm modal" : "nonOpenForm"}>
                                 <div className="pt-5 d-flex justify-content-around">
                                     <h6 className="p-1">Login</h6>
                                     <h4 className="text-center CrossButton p-1" onClick={() => setIsOpen(!isOpen)}> X </h4>

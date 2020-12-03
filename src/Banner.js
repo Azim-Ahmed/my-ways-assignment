@@ -20,7 +20,7 @@ const Banner = () => {
            <><div className={isSignUpOpen ? "openBannerForm text-center" : "nonOpenForm"}>
                                
                                   
-                               <button className=" CrossButton p-2" onClick={() => setIsSignUpOpen(!isSignUpOpen)}> X </button>
+                               <button className=" CrossButton  p-2" onClick={() => setIsSignUpOpen(!isSignUpOpen)}> X </button>
                           
                            <Login signUp = "signUp"></Login>
                        </div></>
